@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+flag: geekday{f9eb857573e4285d4b53ac4d1dc642b1}
