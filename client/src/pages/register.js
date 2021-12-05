@@ -96,7 +96,7 @@ const Register = () => {
                  "
                   disabled={loading}
                 >
-                  <span className="mr-2 uppercase">Send flag 😗</span>
+                  <span className="mr-2 uppercase">GET FLAG</span>
                 </button>
               </div>
             </form>
