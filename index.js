@@ -8,4 +8,6 @@ app.use(express.json());
 app.use(cookie_parser());
 app.use("/api", require("./src/routes"));
 
-app.listen(PORT, () => console.log(`challenge running on port ${PORT}`));
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`challenge running on port ${PORT}`)
+);
