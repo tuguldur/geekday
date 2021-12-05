@@ -46,7 +46,9 @@ exports.register = (req, res) => {
       role: "user",
     };
     const encoded_user = Buffer.from(JSON.stringify(user)).toString("base64");
-    return res.cookie("auth", encoded_user).json({ status: true });
+    return res
+      .cookie("auth", encoded_user)
+      .json({ status: true, msg: `Welcome ${name}` });
   }
 };
 exports.me = (req, res) => {
@@ -59,14 +61,11 @@ exports.me = (req, res) => {
       );
       if (decoded_user.role.toLowerCase() === "admin")
         return res.json({ status: true, flag: process.env.FLAG_WOODY_COOKIE });
-      else
-        return res
-          .status(403)
-          .json({ status: false, msg: "та admin биш байна." });
+      else return res.json({ status: false, flag: "та admin биш байна." });
     } catch (error) {
       return res.clearCookie("auth").status(400).json({
         status: false,
-        msg: "Алдаатай хүсэлт илгээсэн байна та дахин нэвтэрнэ үү.",
+        flag: "Алдаатай хүсэлт илгээсэн байна та дахин нэвтэрнэ үү.",
       });
     }
   }

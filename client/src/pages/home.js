@@ -45,6 +45,7 @@ const Home = () => {
             placeholder="Нэр"
             onChange={onChange}
             required
+            autoFocus
           />
           <input
             type="email"
@@ -53,7 +54,6 @@ const Home = () => {
             placeholder="Email"
             onChange={onChange}
             required
-            autoFocus
           />
 
           <div className="flex w-full">
